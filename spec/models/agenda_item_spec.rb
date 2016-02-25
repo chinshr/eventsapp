@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Event, type: :model do
+RSpec.describe AgendaItem, type: :model do
   it "has a valid factory" do
-    create(:event)
+    create(:agenda_item)
   end
   it "is invalid without a name"
 end
