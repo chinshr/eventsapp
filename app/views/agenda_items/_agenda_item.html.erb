@@ -1,0 +1,7 @@
+<li>
+  <p><%= agenda_item.name %>
+    <%= link_to 'Destroy AgendaItem', [agenda_item.event, agenda_item],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </p>
+</li>

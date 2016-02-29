@@ -1,9 +1,16 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
 </p>
+
+<h3>AgendaItems (<%= @event.agenda_items.count %>)</h3>
+<% if @event.agenda_items.any? %>
+    <ul>
+      <%= render @event.agenda_items %>
+    </ul>
+<% end %>
+
+<%= link_to 'Add Agenda Item', new_event_agenda_item_path(@event) %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
