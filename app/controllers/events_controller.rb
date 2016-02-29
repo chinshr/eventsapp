@@ -10,8 +10,6 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    #TODO: This blows.  Why create a new agenda_item in the events controller when I show the event?
-    @agenda_item = AgendaItem.new
   end
 
   # GET /events/new
