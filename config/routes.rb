@@ -5,8 +5,11 @@ Rails.application.routes.draw do
       get 'step2'
       get 'step3'
       post 'step1update'
+      patch 'step1update'
       post 'step2update'
+      patch 'step2update'
       post 'step3update'
+      patch 'step3update'
     end
     resources :agenda_items
   end

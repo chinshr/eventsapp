@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :step1update, :step2update, :step3update]
 
   # GET /events
   # GET /events.json
@@ -81,16 +81,34 @@ class EventsController < ApplicationController
 
   #POST /events/1/step1update
   def step1update
+    if @event.update(event_params)
+      redirect_to step2_event_path(@event)
+    else
+      render :step1
+    end
+
 
   end
 
   #POST /events/1/step2update
   def step2update
+    if @event.update(event_params)
+      redirect_to step3_event_path(@event)
+    else
+      render :step2
+    end
+
 
   end
 
   #POST /events/1/step3update
   def step3update
+    if @event.update(event_params)
+      redirect_to @event, notice: 'Event was successfully created.'
+    else
+      render :step3
+    end
+
 
   end
 
