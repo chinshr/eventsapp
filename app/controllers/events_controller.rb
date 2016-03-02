@@ -15,6 +15,10 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    if @event.save
+      redirect_to step1_event_path(@event)
+    end
+
   end
 
   # GET /events/1/edit
@@ -26,14 +30,10 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      format.html { redirect_to @event, notice: 'Event was successfully created.' }
+    else
+      format.html { render :new }
     end
   end
 
@@ -59,6 +59,39 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  #GET /events/1/step1
+  def step1
+    @event = Event.find(params[:id])
+
+  end
+
+  #GET /events/1/step2
+  def step2
+    @event = Event.find(params[:id])
+
+  end
+
+  #GET /events/1/step3
+  def step3
+    @event = Event.find(params[:id])
+
+  end
+
+  #POST /events/1/step1update
+  def step1update
+
+  end
+
+  #POST /events/1/step2update
+  def step2update
+
+  end
+
+  #POST /events/1/step3update
+  def step3update
+
   end
 
   private
