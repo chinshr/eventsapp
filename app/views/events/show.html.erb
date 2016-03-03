@@ -3,6 +3,16 @@
   <%= @event.name %>
 </p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @event.note %>
+</p>
+
 <h3>AgendaItems (<%= @event.agenda_items.count %>)</h3>
 <% if @event.agenda_items.any? %>
     <ul>

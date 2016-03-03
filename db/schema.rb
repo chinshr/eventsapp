@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222170554) do
+ActiveRecord::Schema.define(version: 20160229215239) do
 
   create_table "agenda_items", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -24,9 +24,11 @@ ActiveRecord::Schema.define(version: 20160222170554) do
   add_index "agenda_items", ["event_id"], name: "index_agenda_items_on_event_id", using: :btree
 
   create_table "events", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",        limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "description", limit: 65535
+    t.text     "note",        limit: 65535
   end
 
 end
