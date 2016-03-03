@@ -8,9 +8,9 @@ class Event::Step1 < Event
 end
 
 class Event::Step2 < Event
-  validates :description, presence: true, length: { minimum: 1, maximum: 255 }
+  validates :description, presence: true, length: { minimum: 1, maximum: 4096 }
 end
 
 class Event::Step3 < Event
-  validates :note, presence: true, length: { minimum: 1, maximum: 5 }
+  validates :note, length: { maximum: 4096 }
 end
