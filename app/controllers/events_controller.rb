@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :step1update, :step2update, :step3update]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -63,24 +63,25 @@ class EventsController < ApplicationController
 
   #GET /events/1/step1
   def step1
-    @event = Event.find(params[:id])
+    @event = Event::Step1.find(params[:id])
 
   end
 
   #GET /events/1/step2
   def step2
-    @event = Event.find(params[:id])
+    @event = Event::Step2.find(params[:id])
 
   end
 
   #GET /events/1/step3
   def step3
-    @event = Event.find(params[:id])
+    @event = Event::Step3.find(params[:id])
 
   end
 
   #POST /events/1/step1update
   def step1update
+    @event = Event::Step1.find(params[:id])
     if @event.update(event_params)
       redirect_to step2_event_path(@event)
     else
@@ -92,6 +93,7 @@ class EventsController < ApplicationController
 
   #POST /events/1/step2update
   def step2update
+    @event = Event::Step2.find(params[:id])
     if @event.update(event_params)
       redirect_to step3_event_path(@event)
     else
@@ -103,8 +105,9 @@ class EventsController < ApplicationController
 
   #POST /events/1/step3update
   def step3update
+    @event = Event::Step3.find(params[:id])
     if @event.update(event_params)
-      redirect_to @event, notice: 'Event was successfully created.'
+      redirect_to event_path(@event), notice: 'Event was successfully created.'
     else
       render :step3
     end
