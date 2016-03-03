@@ -1,4 +1,4 @@
-<%= form_for(@event, :url => {:action => 'step2update'} ) do |f| %>
+<%= form_for(@event, :as => :event, :url => {:action => 'step2update'} ) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
