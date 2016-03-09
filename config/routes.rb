@@ -13,5 +13,9 @@ Rails.application.routes.draw do
     end
     resources :agenda_items
   end
+  namespace :admin do
+    resources :events, only: [:new, :create, :index]
+    root to: 'pages#index'
+  end
   root to: 'visitors#index'
 end
