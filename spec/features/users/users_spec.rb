@@ -10,13 +10,14 @@ RSpec.feature 'Sign in' do
     expect(page).to have_css("input[type=password]")
   end
 
-  given!(:user) { FactoryGirl.create(:user, email: "another_valid@example.com",
-                                     password: "valid_password", password_confirmation: "valid_password") }
+  # Creating user in the factory
+  #given!(:user) { FactoryGirl.create(:user, email: "another_valid@example.com",
+  #                                   password: "valid_password", password_confirmation: "valid_password") }
 
 
   scenario "Signs in with valid user" do
-    #user = create(:user)
-    fill_in "Email", with: "another_valid@example.com"
+    user = FactoryGirl.create(:user)
+    fill_in "Email", with: "a@example.com"
     fill_in "Password", with: "valid_password"
     find('input[type="submit"]').click
 
