@@ -1,4 +1,6 @@
 
+var EventItem = require ('./event_item');
+
 const EventList = ({data}) => {
 
   const eventNodes = data.map(function(event) {
