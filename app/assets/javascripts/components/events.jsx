@@ -1,8 +1,12 @@
-var EventBox = React.createClass({
-  getInitialState: function() {
-    return {data: this.props.data}
-  },
-  render: function() {
+class EventBox extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: this.props.data
+    }
+  }
+  render() {
     console.log('this.props...', this.props);
     return (
       <div className="eventBox">
@@ -11,40 +15,36 @@ var EventBox = React.createClass({
       </div>
     );
   }
-});
+};
 
-var EventList = React.createClass({
-  render: function() {
+const EventList = ({data}) => {
 
-    var eventNodes = this.props.data.map(function(event) {
-      return (
-        <Event name={event.name} description={event.description} key={event.id}>
-          {event.note}
-        </Event>
-      );
-    });
-
+  const eventNodes = data.map(function(event) {
     return (
-      <div className="eventList">
-        {eventNodes}
-      </div>
-    )
-  }
-});
+      <Event name={event.name} description={event.description} key={event.id}>
+        {event.note}
+      </Event>
+    );
+  });
 
-var Event = React.createClass({
-  render: function() {
-    return (
-      <div className="event">
-        <h2 className="eventName">
-          {this.props.name}
-        </h2>
-        <p>
-          {this.props.description}
-        </p>
-        <p>Note? {this.props.children}</p>
-      </div>
-    )
-  }
-});
+  return (
+    <div className="eventList">
+      {eventNodes}
+    </div>
+  )
+};
 
+const Event = (props) => {
+  return (
+    <div className="event">
+      <h2 className="eventName">
+        {props.name}
+      </h2>
+      <p>
+        {props.description}
+      </p>
+      <p>Note? {props.children}</p>
+    </div>
+
+  )
+};
