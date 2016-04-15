@@ -16,3 +16,5 @@ class EventBox extends React.Component {
     );
   }
 }
+
+module.exports = EventBox;
