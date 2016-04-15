@@ -15,4 +15,4 @@ class EventBox extends React.Component {
       </div>
     );
   }
-};
+}
