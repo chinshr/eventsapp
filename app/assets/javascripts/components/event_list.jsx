@@ -15,3 +15,5 @@ const EventList = ({data}) => {
     </div>
   )
 };
+
+module.exports = EventList;
