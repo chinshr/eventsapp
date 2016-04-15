@@ -13,3 +13,5 @@ const EventItem = (props) => {
 
   )
 };
+
+module.exports = EventItem;

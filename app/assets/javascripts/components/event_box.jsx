@@ -1,3 +1,5 @@
+var EventList = require ('./event_list');
+
 class EventBox extends React.Component {
   constructor(props) {
     super(props);
@@ -16,3 +18,5 @@ class EventBox extends React.Component {
     );
   }
 }
+
+module.exports = EventBox;

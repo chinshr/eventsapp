@@ -18,6 +18,7 @@ gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
 gem 'react-rails'
+gem 'browserify-rails'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
