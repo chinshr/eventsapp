@@ -21,3 +21,5 @@
 var Greeter = require('./greeter');
 Greeter.sayHello('Visitor');
 Greeter.sayGoodbye('Visitor');
+
+require('./redux-stuff');

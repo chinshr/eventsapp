@@ -38,4 +38,5 @@ const todos = (state = [], action) => {
   }
 };
 
-module.exports = todos;
+//module.exports = todos;
+export default todos;

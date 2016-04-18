@@ -1,5 +1,6 @@
-var Redux = require ('redux');
-var todoApp = require ('./reducers');
+//var Redux = require ('redux');
+import Redux from 'redux';
+import todoApp from './reducers';
 
 //TODO: Why do I need to name the file as *.jsx ?
 
