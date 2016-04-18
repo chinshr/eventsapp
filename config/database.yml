@@ -14,7 +14,7 @@ development:
   reconnect: false
   database: eventsapp_development
   pool: 5
-  username: eventsapp
+  username: root
   password:
   host: localhost
 

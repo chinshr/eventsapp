@@ -7,18 +7,22 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'devise', '~> 3.5.6'
+
 group :development, :test do
   gem 'byebug'
 end
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
 gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
 gem 'react-rails'
 gem 'browserify-rails'
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
